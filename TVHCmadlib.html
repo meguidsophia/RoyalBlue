@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mad Lib</title>
+    <link href ="stylesheets.css" type="text/css" rel="stylesheets">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>   
+
+<body>
+    <div class = "container">
+    <h1><em>The Very Hungry Catterpillar</em></h1> 
+    <h2>MadLib</h2>
+    
+    <br>
+    <br>
+    <br>
+        
+        <!--this will be where the completed story(madlib) will go once the finished button is clicked-->
+        <div id="empty-div"></div>
+    
+    <br>
+    <br>
+    <br>
+
+    <!-- spaces for players' input of parts of speech go-->
+        <div class="input-group flex-nowrap" >
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping" id="1noun">Noun
+            </div>
+            <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>   
+
+    <script type="text/javascript">
+    function writeNoun(event){
+        var noun1= document.getElementById("1noun").value;
+        alert(noun1);
+    }
+    document.addEventListener("keyup", displayKey, false)
+    function displayKey(event){
+        var aKey = event.key;
+    }
+    displayKey();
+    if(displayKey === "a"){
+        writeNoun();
+    };
+
+    
+        
+
+    </script>
+    </div>
+</body>
+
+
+
+</html>
