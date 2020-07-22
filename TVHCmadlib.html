@@ -30,62 +30,68 @@
                 </div>
                 <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input1">
             </div>
-            <br>
 
-
-            <div class="input-group flex-nowrap" >
-            <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping">Noun
-            </div>
-            <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input2">
-            </div>
             <br>
 
             <div class="input-group flex-nowrap" >
-            <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping">Noun
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">Noun
+                </div>
+                <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input2">
             </div>
-            <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input3">
-            </div>
+
             <br>
 
             <div class="input-group flex-nowrap" >
-            <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping">Noun
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">Noun
+                </div>
+                <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input3">
             </div>
-            <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input4">
+            
+            <br>
+
+            <div class="input-group flex-nowrap" >
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">Noun
+                </div>
+                <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input4">
             </div>
+            
             <br>
     
             <div class="input-group flex-nowrap" >
-            <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping">Noun
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">Noun
+                </div>
+                <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input5">
             </div>
-            <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input5">
-            </div>
+            
             <br>
 
             <div class="input-group flex-nowrap" >
-            <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping">Noun
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">Noun
+                </div>
+                <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input6">
             </div>
-            <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input6">
-            </div>
+            
             <br>
     
             <div class="input-group flex-nowrap" >
-            <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping">Noun
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">Noun
+                </div>
+                <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input7">
             </div>
-            <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input7">
-            </div>
+            
             <br>
         
             <div class="input-group flex-nowrap" >
-            <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping">Noun
-            </div>
-            <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input8">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping">Noun
+                </div>
+                <input type="text" class="form-control" placeholder="Type your input here" aria-label="Username" aria-describedby="addon-wrapping" id="input8">
             </div>
             <br>
 
@@ -97,8 +103,8 @@
           
     <script type="text/javascript">
 
-    document.getElementById("submit").addEventListener( "click", alerter, false);
-    function alerter(){
+    document.getElementById("submit").addEventListener( "click", executeMadLib, false);
+    function executeMadLib(){
         var input1 = document.getElementById("input1").value;
         var input2 = document.getElementById("input2").value;
         var input3 = document.getElementById("input3").value;
@@ -109,6 +115,8 @@
         var input8 = document.getElementById("input8").value;
         alert(input1 + "\n" + input2 + "\n" + input3 + "\n" + input4 + "\n" + input5 + "\n" + input6 + "\n" + input7 + "\n" + input8 );
 
+        var words = document.getElementById("empty-div");
+        words.textContent ="hello world";
     }    
     
         
