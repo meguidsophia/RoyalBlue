@@ -3,10 +3,20 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TVHC Animation</title>
+        <title>Animation</title>
+
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery.js"></script>
+
     </head>
+
+
     <body style="background-color: lightblue;">
+
+
+      <!--NAVBAR-->
+
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#"><strong>The Very Hungry Caterpillar</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,5 +43,94 @@
                     </li>
             </div>
           </nav>
+
+          
+          <!--HEADER-->
+          <h1 style="padding-left: 10px"><em>The Very Hungry Caterpillar</em></h1>
+          <h2 style="padding-left: 10px">Animation</h2>
+          
+
+        <!--row div-->
+        <div class="container">
+
+        <!--caterpillar picture-->
+        <div class="row" style="margin: auto">
+          <img src="caterpillar.jpg" alt="the very hungry caterpillar" class="img" id="TheHungryCaterpillar" style="position: relative; top: 25px; left: 300px; z-index: -20; height: 300px">
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!--buttons and cards for actions-->
+        <div class="row" style="margin: auto">
+
+            <div class="col-lg-6">
+
+              <!--movement controls-->
+              <div id="MoveControls" class="card">
+                <h4 class="card-header">Movement Controls</h4>
+                <div class="card-body">
+                  <div class="text-center">
+                    <button class="btn btn-dark btn-lg left-button">
+                      <span class="fa fa-ok"></span> Left</button>
+                    <button class="btn btn-primary btn-lg right-button">
+                      <span class="fa fa-plus"></span> Right</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+
+              <!--size controls-->
+              <div id="SizeControls" class="card">
+                <h4 class="card-header">Size Controls</h4>
+                <div class="card-body">
+                  <div class="text-center">
+                    <button class="btn btn-dark btn-lg eat-button">
+                      <span class="fa fa-ok"></span> Eat</button>
+                      <button class="btn btn-primary btn-lg Reset-button">
+                        <span class="fa fa-plus"></span> Reset</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+
+      <!--ANIMATION ACTIONS CODE-->
+
+      <script>
+
+        $(document).ready(function() {
+
+          //store caterpillar picture in TheHungryCaterpillar variable
+          var TheHungryCaterpillar = $("#TheHungryCaterpillar");
+
+
+          //size control buttons
+          $(".Reset-button").on("click", function() {
+            TheHungryCaterpillar.animate({ height: "300px" });
+          });
+          $(".eat-button").on("click", function() {
+            TheHungryCaterpillar.animate({ height: "600px" });
+          });
+
+
+          //left and right movement buttons
+          $(".right-button").on("click", function() {
+            TheHungryCaterpillar.animate({ left: "+=200px" }, "normal");
+          });
+          $(".left-button").on("click", function() {
+            TheHungryCaterpillar.animate({ left: "-=200px" }, "normal");
+          });
+
+        });
+
+      </script>
     </body>
-</html>
+</html> 
