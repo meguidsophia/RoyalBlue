@@ -15,37 +15,6 @@
         Comprehension Quiz
     </h1>
     <br>
-    <br>
-    <h3 style="text-align: center;">Use this quiz to test your knowledge about the book!</h3>
-    
-
-<!-- <container>
-    Code for a multiple Choice Question
-    <div id= "q1">
-        <p>What color is the caterpillar?</p>
-        <input type="radio" id="blue-and-green" name="color" value="blue-and-green" class="q1">
-         <label for="blue-and-green">Blue and green</label><br>
-         <input type="radio" id="red-and-green" name="color" value="red-and-green" class="q1">
-         <label for="red-and-green">Red and Green</label><br>
-         <input type="radio" id="yellow-and-pink" name="color" value="yellow-and-pink" class="q1">
-         <label for="yellow-and-pink">Yellow and pink</label>
-     </div>
-
-     <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The hungry caterpillar came out of its egg on a warm day</button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">True</a>
-                    <a class="dropdown-item" href="#">False</a>
-                  </div>
-                </div>
-              </div>
-
-
-
-
-     
-</container> -->
 
 <ol>
 
@@ -55,6 +24,9 @@
 <br>
 <br>
 <h3 style="text-align: center;">Use this quiz to test your knowledge about the book!</h3>
+<br>
+<div style="font-size: 30px; text-align: center;" id="result"></div>
+<br>
 <br>
       <li>The hungry caterpillar is ________ and ________. <div id="q1result" style="font-size: 24px;"> </div>
         <div style="padding: 5px;">
@@ -101,7 +73,9 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroup-sizing-default">On Monday, the caterpillar ate one</span> 
         </div>
-       <input type="text" class="form-control col-4" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="q4guess"> <div id="q4result" style="font-size: 24px;"></div>
+       <input type="text" class="form-control col-4" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="q4guess"> 
+       <br>
+       <div id="q4result" style="font-size: 24px;"></div>
       </div>
       </li>
 
@@ -128,7 +102,9 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroup-sizing-default">The caterpillar ate ________ plums on Wednesday.</span>
         </div>
-       <input type="text" class="form-control col-4" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="q6guess"> <div id="q6result" style="font-size: 24px;"></div>
+       <input type="text" class="form-control col-4" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="q6guess">
+       <br> 
+       <div id="q6result" style="font-size: 24px;"></div>
       </div>
      </li>
 
@@ -151,7 +127,9 @@
     <li>
       <div style="padding: 5px;" class="input-group mb-3">
         <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">On Saturday, the caterpillar ate a lot of tasty foods.</button> <div id="q8result" style="font-size: 24px;"></div>
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">On Saturday, the caterpillar ate a lot of tasty foods.</button> 
+          <br>
+          <div id="q8result" style="font-size: 24px;"></div>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#">True</a>
             <a class="dropdown-item" href="#">False</a>
@@ -180,7 +158,9 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-default">After eating so much, the caterpillar became a big, ________ caterpillar.</span>
       </div>
-     <input type="text" class="form-control col-4" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="q10guess"> <div id="q10result" style="font-size: 24px;"></div>
+     <input type="text" class="form-control col-4" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="q10guess"> 
+     <br>
+     <div id="q10result" style="font-size: 24px;"></div>
     </div>
    </li>
 
@@ -222,16 +202,19 @@
       document.getElementById("submit").addEventListener("click", correctQ9, false);
       document.getElementById("submit").addEventListener("click", correctQ10, false);
       document.getElementById("submit").addEventListener("click", correctQ11, false);
+      document.getElementById("submit").addEventListener("click", correctQuiz, false);
 
 
         function correctQ1(){
             if( document.getElementById("red-and-green").checked === true){
                 var q1resultJS = document.getElementById("q1result");
-                q1resultJS.style.setProperty("color", "green", null)
+                q1resultJS.style.setProperty("color", "green", null);
                 q1resultJS.innerHTML = "Correct!";
-                console.log("Q1 correct");
+                correctAnswers ++;
             } else{
-                console.log("Q1 wrong")
+                var q1resultJS = document.getElementById("q1result");
+                q1resultJS.style.setProperty("color", "red", null);
+                q1resultJS.innerHTML = "Incorrect   The answer was: Red and Green";
             }
         }
         function correctQ2(){
@@ -239,15 +222,30 @@
         }
         function correctQ3(){
             if( document.getElementById("hungry").checked === true){
-                console.log("Q3 correct");
+                var q3resultJS = document.getElementById("q3result");
+                q3resultJS.style.setProperty("color", "green", null);
+                q3resultJS.innerHTML = "Correct!";
+                correctAnswers ++;
             } else{
-                console.log("Q3 wrong");
+                var q3resultJS = document.getElementById("q3result");
+                q3resultJS.style.setProperty("color", "red", null);
+                q3resultJS.innerHTML = "Incorrect   The answer was: Hungry";
             }
         }
         function correctQ4(){
             var q4input = document.getElementById("q4guess").value;
             var q4inputLwr = q4input.toLowerCase();
-            console.log(q4inputLwr);
+            if(q4inputLwr === "apple"){
+                var q4resultJS = document.getElementById("q4result");
+                q4resultJS.style.setProperty("color", "green", null);
+                q4resultJS.innerHTML = "Correct!";
+                correctAnswers ++;
+            }else{
+                var q4resultJS = document.getElementById("q4result");
+                q4resultJS.style.setProperty("color", "red", null);
+                q4resultJS.innerHTML = "Incorrect   The answer was: Apple";
+
+            }
         }
         function correctQ5(){
             
@@ -255,12 +253,28 @@
         function correctQ6(){
             var q6input = document.getElementById("q6guess").value;
             var q6inputLwr = q6input.toLowerCase();
+            if(q6inputLwr === "three" || q6inputLwr == "3"){
+                var q6resultJS = document.getElementById("q6result");
+                q6resultJS.style.setProperty("color", "green", null);
+                q6resultJS.innerHTML = "Correct!";
+                correctAnswers ++;
+            }else{
+                var q6resultJS = document.getElementById("q6result");
+                q6resultJS.style.setProperty("color", "red", null);
+                q6resultJS.innerHTML = "Incorrect   The answer was: Three";
+
+            }
         }
         function correctQ7(){
             if( document.getElementById("starving").checked === true){
-                console.log("Q7 correct");
+                var q7resultJS = document.getElementById("q7result");
+                q7resultJS.style.setProperty("color", "green", null);
+                q7resultJS.innerHTML = "Correct!";
+                correctAnswers ++;
             } else{
-                console.log("Q7 wrong");
+                var q7resultJS = document.getElementById("q7result");
+                q7resultJS.style.setProperty("color", "red", null);
+                q7resultJS.innerHTML = "Incorrect   The answer was: Starving";
             }
         }
         function correctQ8(){
@@ -268,18 +282,39 @@
         }
         function correctQ9(){
             if( document.getElementById("healthy").checked === true){
-                console.log("Q9 correct");
+              var q9resultJS = document.getElementById("q9result");
+                q9resultJS.style.setProperty("color", "green", null);
+                q9resultJS.innerHTML = "Correct!";
+                correctAnswers ++;
             } else{
-                console.log("Q9 wrong");
+                var q9resultJS = document.getElementById("q9result");
+                q9resultJS.style.setProperty("color", "red", null);
+                q9resultJS.innerHTML = "Incorrect   The answer was: Healthy";
             }
         }
         function correctQ10(){
           var q10input = document.getElementById("q10guess").value;
             var q10inputLwr = q10input.toLowerCase();
+            if(q10inputLwr === "fat"){
+                var q10resultJS = document.getElementById("q10result");
+                q10resultJS.style.setProperty("color", "green", null);
+                q10resultJS.innerHTML = "Correct!";
+                correctAnswers ++;
+            }else{
+                var q10resultJS = document.getElementById("q10result");
+                q10resultJS.style.setProperty("color", "red", null);
+                q10resultJS.innerHTML = "Incorrect   The answer was: Fat";
+            }
         }
         function correctQ11(){
             
         }    
+
+        function correctQuiz(){
+          var finalScore = document.getElementById("result");
+          finalScore.innerHTML = "Final Score: " + correctAnswers + "/11 " + "That's " + Math.floor((correctAnswers/11) * 100)+ "%"
+
+        }
     
      </script>
 
