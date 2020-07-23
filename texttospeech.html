@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test</title>
+</head>
+
+<body>
+
+    <button type="button" class="btn btn-primary" id="textToSpeech" style="position: relative; left: 50px; background-color: rgb(245, 84, 26); color: lightgray; height: 50px; width: 165px; font-size: 25px; text-align: center; border: none;">Read to me</button>
+
+    <button type="button" class="btn btn-primary" id="endTextToSpeech" style="position: relative; left: 50px; background-color: rgb(245, 84, 26); color: lightgray; height: 50px; width: 165px; font-size: 25px; text-align: center; border: none;">Stop reading</button>
+
+
+    <script type="text/javascript">
+
+        if ('speechSynthesis' in window) {
+            // Speech Synthesis supported 🎉
+            //alert("The text-to-speech button will work in your browser!");
+        } else {
+            // Speech Synthesis Not Supported 😣
+            //alert("Sorry, the text-to-speech button will not work in your browser!");
+        }
+
+
+
+        document.querySelector("#textToSpeech").addEventListener("click", speak, false);
+        function speak(event) {
+            
+            var synth = window.speechSynthesis;
+
+            var utterance1 = new SpeechSynthesisUtterance('The Very Hungry Caterpillar. by Eric Carle... In the light of the moon, a little egg lay on a leaf. One Sunday morning, the warm sun came up and pop! – out of the egg came a tiny and very hungry caterpillar. He started to look for some food. On Monday he ate through one apple. But he was still hungry. On Tuesday, he ate through two pears, but he was still hungry. On Wednesday, he ate through three plums, but he was still hungry. On Thursday, he ate through four strawberries, but he was still hungry. On Friday, he ate through five oranges, but he was still hungry. On Saturday, he ate through one piece of chocolate cake, one ice cream cone, one pickle, one slice of swiss cheese, one slice of salami, one lollipop, one piece of cherry pie, one sausage, one cupcake, and one slice of watermelon. That night he had a stomachache! The next day was Sunday again. The caterpillar ate through one nice green leaf, and after that he felt much better. Now he wasn’t hungry anymore, and he wasn’t a little caterpillar anymore. He was a big, fat caterpillar. He built a small house around himself, called a Cocoon, and he stayed inside for more than two weeks. Then he nibbled a hole in the cocoon, pushed his way out, and. He was a beautiful butterfly.');
+
+            synth.speak(utterance1);
+            
+
+            document.querySelector("#endTextToSpeech").addEventListener("click", stopSpeaking, false);
+            function stopSpeaking(event) {
+                synth.cancel(); // utterance1 stops being spoken immediately, and both are removed from the queue
+        }
+
+        }
+
+
+    </script>
+</body>
+
+</html>
