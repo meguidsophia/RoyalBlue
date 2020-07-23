@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -120,7 +125,7 @@
           <div id="q5result" style="font-size: 24px;"></div>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#">True</a>
-            <a class="dropdown-item" href="#">False</a>
+            <a onclick="correctQ5()" class="dropdown-item" href="#">False</a>
           </div>
         </div>
       </div>
@@ -228,7 +233,6 @@
 
 
 
-
   <script type="text/javascript">
     var correctAnswers = 0;
 
@@ -260,6 +264,7 @@
     }
     function correctQ2() {
 
+
     }
     function correctQ3() {
       if (document.getElementById("hungry").checked === true) {
@@ -289,6 +294,18 @@
       }
     }
     function correctQ5() {
+      var q6input = document.getElementById("q5guess").value;
+      document.getElementById("q5result").value===1
+      //var Q5correct=document.getElementById("q5result").value
+      if(document.getElementById("q5result").value===1){
+        q4resultJS.style.setProperty("color", "green", null);
+        q4resultJS.innerHTML = "Correct!";
+        correctAnswers++;
+      }
+      else{
+        q4resultJS.style.setProperty("color", "red", null);
+        q4resultJS.innerHTML = "Incorrect   The answer was: False";
+      }
 
     }
     function correctQ6() {
