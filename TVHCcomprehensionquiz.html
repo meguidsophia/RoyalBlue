@@ -29,7 +29,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a href="TVHChomepage.html" class="nav-link" href="#">Homepage and Book <span
+          <a href="index.html" class="nav-link" href="#">Homepage and Book <span
               class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
@@ -75,13 +75,11 @@
     <li>
       <div style="padding: 5px;" class="input-group mb-3">
         <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">The hungry caterpillar came out of its egg on a warm
-            day.</button>
+          <button id="question-2" class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">The hungry caterpillar came out of its egg on a warm day.</button>
           <div id="q2result" style="font-size: 24px;"> </div>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">True</a>
-            <a class="dropdown-item" href="#">False</a>
+            <button onclick="true2()" class="dropdown-item" href="#">True</button>
+            <button onclick="false2()" class="dropdown-item" href="#">False</button>
           </div>
         </div>
       </div>
@@ -102,8 +100,11 @@
 
     <br>
 
+
+   <!--Question 4-->
+
     <li>
-      <div cstyle="padding: 5px;" class="input-group mb-6 ">
+      <div style="padding: 5px;" class="input-group mb-6">
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroup-sizing-default">On Monday, the caterpillar ate one</span>
         </div>
@@ -116,20 +117,19 @@
 
     <br>
     <br>
-
-    <li>
-      <div style="padding: 5px;" class="input-group mb-3">
-        <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">On Tuesday, the caterpillar ate two oranges.</button>
-          <div id="q5result" style="font-size: 24px;"></div>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">True</a>
-            <a onclick="correctQ5()" class="dropdown-item" href="#">False</a>
-          </div>
-        </div>
+    <!--Question 5-->
+  <li>
+    <div style="padding: 5px;" class="input-group mb-3">
+    <div class="input-group-prepend">
+      <button id="question-5" class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">On Tuesday, the caterpillar ate two oranges.</button>
+      <div id="q5result" style="font-size: 24px;"> </div>
+      <div class="dropdown-menu">
+        <button onclick="true5()" class="dropdown-item" href="#">True</button>
+        <button onclick="false5()" class="dropdown-item" href="#">False</button>
       </div>
-    </li>
+    </div>
+    </div>
+  </li>
 
     <br>
     <br>
@@ -166,17 +166,15 @@
     <li>
       <div style="padding: 5px;" class="input-group mb-3">
         <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">On Saturday, the caterpillar ate a lot of tasty foods.</button>
-          <br>
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="question-8" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">On Saturday, the caterpillar ate a lot of tasty foods.</button>
           <div id="q8result" style="font-size: 24px;"></div>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">True</a>
-            <a class="dropdown-item" href="#">False</a>
+            <button onclick="true8()" class="dropdown-item">True</button>
+            <button onclick="false8()" class="dropdown-item">False</button>
           </div>
         </div>
       </div>
-    </li>
+    </li> 
 
     <br>
 
@@ -213,18 +211,17 @@
     <li>
       <div style="padding: 5px;" class="input-group mb-3">
         <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">After two weeks in the cocoon, the caterpillar became a beautiful
-            butterfly.</button>
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="question-11" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">After two weeks in the cocoon, the caterpillar became a beautiful butterfly.</button>
           <div id="q11result" style="font-size: 24px;"></div>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">True</a>
-            <a class="dropdown-item" href="#">False</a>
+            <button onclick="true11()" class="dropdown-item">True</button>
+            <button onclick="false11()" class="dropdown-item">False</button>
           </div>
         </div>
       </div>
-    </li>
+    </li> 
 
+  
     <br>
   </ol>
 
@@ -262,7 +259,25 @@
         q1resultJS.innerHTML = "Incorrect   The answer was: Red and Green";
       }
     }
+    function true2(){
+          document.getElementById("question-2").value = 1;
+        } 
+
+    function false2(){
+          document.getElementById("question-2").value=0;
+        }
+
     function correctQ2() {
+      if(document.getElementById("question-2").value == 1){
+        var q2resultJS = document.getElementById("q2result");
+        q2resultJS.style.setProperty("color", "green", null);
+        q2resultJS.innerHTML = "Correct!";
+        correctAnswers++;
+      }else{
+        var q2resultJS = document.getElementById("q2result");
+        q2resultJS.style.setProperty("color", "red", null);
+        q2resultJS.innerHTML = "Incorrect   The answer was: True";
+      }
 
 
     }
@@ -293,20 +308,24 @@
 
       }
     }
+    function true5(){
+          document.getElementById("question-5").value=1;
+        }
+      
+    function false5(){
+          document.getElementById("question-5").value=0;
+        }
     function correctQ5() {
-      var q6input = document.getElementById("q5guess").value;
-      document.getElementById("q5result").value===1
-      //var Q5correct=document.getElementById("q5result").value
-      if(document.getElementById("q5result").value===1){
-        q4resultJS.style.setProperty("color", "green", null);
-        q4resultJS.innerHTML = "Correct!";
+      if(document.getElementById("question-5").value == 0){
+        var q5resultJS = document.getElementById("q5result");
+        q5resultJS.style.setProperty("color", "green", null);
+        q5resultJS.innerHTML = "Correct!";
         correctAnswers++;
+      }else{
+        var q5resultJS = document.getElementById("q5result");
+        q5resultJS.style.setProperty("color", "red", null);
+        q5resultJS.innerHTML = "Incorrect   The answer was: False";
       }
-      else{
-        q4resultJS.style.setProperty("color", "red", null);
-        q4resultJS.innerHTML = "Incorrect   The answer was: False";
-      }
-
     }
     function correctQ6() {
       var q6input = document.getElementById("q6guess").value;
@@ -335,9 +354,28 @@
         q7resultJS.innerHTML = "Incorrect   The answer was: Starving";
       }
     }
-    function correctQ8() {
 
+    function true8(){
+          document.getElementById("question-8").value=1;
+        }
+
+    function false8(){
+          document.getElementById("question-8").value=0;
+        }
+
+    function correctQ8() {
+      if(document.getElementById("question-8").value == 1){
+        var q8resultJS = document.getElementById("q8result");
+        q8resultJS.style.setProperty("color", "green", null);
+        q8resultJS.innerHTML = "Correct!";
+        correctAnswers++;
+      }else{
+        var q8resultJS = document.getElementById("q8result");
+        q8resultJS.style.setProperty("color", "red", null);
+        q8resultJS.innerHTML = "Incorrect   The answer was: True";
+      }
     }
+    
     function correctQ9() {
       if (document.getElementById("healthy").checked === true) {
         var q9resultJS = document.getElementById("q9result");
@@ -350,6 +388,7 @@
         q9resultJS.innerHTML = "Incorrect   The answer was: Healthy";
       }
     }
+
     function correctQ10() {
       var q10input = document.getElementById("q10guess").value;
       var q10inputLwr = q10input.toLowerCase();
@@ -364,8 +403,26 @@
         q10resultJS.innerHTML = "Incorrect   The answer was: Fat";
       }
     }
-    function correctQ11() {
 
+    function true11(){
+          document.getElementById("question-11").value=1;
+        }
+
+    function false11(){
+          document.getElementById("question-11").value=0;
+        }
+
+    function correctQ11() {
+      if(document.getElementById("question-11").value == 1){
+        var q11resultJS = document.getElementById("q11result");
+        q11resultJS.style.setProperty("color", "green", null);
+        q11resultJS.innerHTML = "Correct!";
+        correctAnswers++;
+      }else{
+        var q11resultJS = document.getElementById("q11result");
+        q11resultJS.style.setProperty("color", "red", null);
+        q11resultJS.innerHTML = "Incorrect   The answer was: True";
+      }
     }
 
     function correctQuiz() {
